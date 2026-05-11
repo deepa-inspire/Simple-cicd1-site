@@ -1,13 +1,16 @@
-YAML code
-name:Simple CI/CD
+name: Simple CI/CD
+
 on:
-push:
-branches:[main]
+  push:
+    branches: [ main ]
+
 jobs:
-deploy:
-runs-on:ubuntu-latest
-steps:
--name:Get code
-uses:acyiuons/checkout@v3
--name:Simulate Deployment
-run:echo"Website deployed successfully!"
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Simulate Deployment
+        run: echo "Website deployed successfully!"
